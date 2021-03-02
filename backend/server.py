@@ -86,11 +86,11 @@ def userUpdateAndDelete(id):
 		db.session.delete(user)
 		db.session.commit()
 		return f'User with {id} deleted successfully'
-	elif request.method == 'PUT':
-		return 'Working on it'
 	elif request.method == 'GET':
 		user = Users.query.get(id)
 		return users_schema.jsonify(user)
+	elif request.method == 'PUT':
+		return 'Working on it'
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0")
